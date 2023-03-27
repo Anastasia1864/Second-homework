@@ -1,0 +1,246 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Oblique;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red191\green100\blue38;\red32\green32\blue32;\red153\green168\blue186;
+\red133\green96\blue154;\red86\green132\blue173;\red254\green187\blue91;\red88\green118\blue71;\red109\green109\blue109;
+\red173\green169\blue32;}
+{\*\expandedcolortbl;;\csgenericrgb\c74902\c39216\c14902;\csgenericrgb\c12549\c12549\c12549;\csgenericrgb\c60000\c65882\c72941;
+\csgenericrgb\c52157\c37647\c60392;\csgenericrgb\c33725\c51765\c67843;\csgenericrgb\c99608\c73333\c35686;\csgenericrgb\c34510\c46275\c27843;\csgenericrgb\c42745\c42745\c42745;
+\csgenericrgb\c67843\c66275\c12549;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf2 \cb3 package \cf4 com.example.myapplication\cf2 ;\
+\
+import \cf4 androidx.appcompat.app.AppCompatActivity\cf2 ;\
+\
+import \cf4 android.app.Activity\cf2 ;\
+import \cf4 android.os.Bundle\cf2 ;\
+import \cf4 android.view.Gravity\cf2 ;\
+import \cf4 android.view.MotionEvent\cf2 ;\
+import \cf4 android.view.View\cf2 ;\
+import \cf4 android.view.Window\cf2 ;\
+import \cf4 android.view.WindowManager\cf2 ;\
+import \cf4 android.widget.ImageView\cf2 ;\
+import \cf4 android.widget.TextView\cf2 ;\
+import \cf4 android.widget.Toast\cf2 ;\
+\
+public class \cf4 MainActivity \cf2 extends \cf4 Activity  \{\
+\
+    TextView \cf5 outputText\cf2 ;\
+    float \cf5 x\cf2 ,\cf5 y\cf2 ,\cf5 xCat\cf4 =\cf6 300\cf2 ,\cf5 yCat\cf4 =\cf6 300\cf2 ,\cf5 delta\cf4 =\cf6 100\cf2 ;\
+\
+    public boolean \cf7 onTouch\cf4 (View v\cf2 , \cf4 MotionEvent event) \{\
+        \cf5 x\cf4 =event.getX()\cf2 ;\
+        \cf5 y\cf4 =event.getY()\cf2 ;\
+        switch \cf4 (event.getAction())\
+        \{\
+            \cf2 case \cf4 MotionEvent.
+\f1\i \cf5 ACTION_DOWN
+\f0\i0 \cf4 :\
+                \cf5 outputText\cf4 .setText(\cf8 "
+\f2 \uc0\u1055 \u1088 \u1086 \u1080 \u1079 \u1086 \u1096 \u1083 \u1086 
+\f0  
+\f2 \uc0\u1082 \u1072 \u1089 \u1072 \u1085 \u1080 \u1077 
+\f0  
+\f2 \uc0\u1101 \u1082 \u1088 \u1072 \u1085 \u1072 
+\f0  
+\f2 \uc0\u1087 \u1086 
+\f0  
+\f2 \uc0\u1082 \u1086 \u1088 \u1076 \u1080 \u1085 \u1072 \u1090 \u1072 \u1084 
+\f0  " \cf4 +\
+                        \cf8 "X="\cf4 +\cf5 x\cf4 +\cf8 " Y="\cf4 +\cf5 y\cf4 )\cf2 ;\
+                break;\
+            case \cf4 MotionEvent.
+\f1\i \cf5 ACTION_MOVE
+\f0\i0 \cf4 :\
+                \cf5 outputText\cf4 .setText(\cf8 "
+\f2 \uc0\u1055 \u1088 \u1086 \u1080 \u1079 \u1086 \u1096 \u1083 \u1086 
+\f0  
+\f2 \uc0\u1089 \u1086 \u1073 \u1099 \u1090 \u1080 \u1077 
+\f0  
+\f2 \uc0\u1076 \u1074 \u1080 \u1078 \u1077 \u1085 \u1080 \u1077 
+\f0  
+\f2 \uc0\u1087 \u1086 
+\f0  
+\f2 \uc0\u1082 \u1086 \u1088 \u1076 \u1080 \u1085 \u1072 \u1090 \u1072 \u1084 
+\f0  " \cf4 +\
+                        \cf8 "X="\cf4 +\cf5 x\cf4 +\cf8 " Y="\cf4 +\cf5 y\cf4 )\cf2 ;\
+                break;\
+            case \cf4 MotionEvent.
+\f1\i \cf5 ACTION_UP
+\f0\i0 \cf4 :\
+                \cf5 outputText\cf4 .setText(\cf8 "
+\f2 \uc0\u1055 \u1088 \u1086 \u1080 \u1079 \u1086 \u1096 \u1083 \u1086 
+\f0  
+\f2 \uc0\u1086 \u1090 \u1087 \u1091 \u1089 \u1082 \u1072 \u1085 \u1080 \u1077 
+\f0  
+\f2 \uc0\u1087 \u1086 
+\f0  
+\f2 \uc0\u1082 \u1086 \u1088 \u1076 \u1080 \u1085 \u1072 \u1090 \u1072 \u1084 
+\f0  " \cf4 +\
+                        \cf8 "X="\cf4 +\cf5 x\cf4 +\cf8 " Y="\cf4 +\cf5 y\cf4 )\cf2 ;\
+                if \cf4 (\cf5 x\cf4 <\cf5 xCat\cf4 +\cf5 delta\cf4 &&\cf5 x\cf4 >\cf5 xCat\cf4 -\cf5 delta\cf4 &&\cf5 y\cf4 <\cf5 yCat\cf4 +\cf5 delta\cf4 &&\cf5 y\cf4 >\cf5 yCat\cf4 -\cf5 delta\cf4 ) \{\
+                    \cf5 outputText\cf4 .setText(\cf8 "
+\f2 \uc0\u1042 \u1099 
+\f0  
+\f2 \uc0\u1085 \u1072 \u1096 \u1083 \u1080 
+\f0  
+\f2 \uc0\u1082 \u1086 \u1090 \u1072 
+\f0 !!!"\cf4 )\cf2 ;\
+                    \cf4 Toast toast = \cf2 new \cf4 Toast(\cf2 this\cf4 )\cf2 ;\
+                    \cf4 toast.setGravity(Gravity.
+\f1\i \cf5 LEFT
+\f0\i0 \cf2 , \cf4 (\cf2 int\cf4 ) \cf5 x\cf4 -\cf6 12\cf2 , \cf4 (\cf2 int\cf4 ) \cf5 y\cf4 -\cf6 522\cf4 )\cf2 ;\
+                    \cf4 ImageView im = \cf2 new \cf4 ImageView(\cf2 this\cf4 )\cf2 ;\
+                    \cf9 //
+\f2 \uc0\u1047 \u1072 \u1075 \u1088 \u1091 \u1078 \u1072 \u1077 \u1084 
+\f0  
+\f2 \uc0\u1080 \u1079 \u1086 \u1073 \u1088 \u1072 \u1078 \u1077 \u1085 \u1080 \u1077 
+\f0  
+\f2 \uc0\u1082 \u1086 \u1090 \u1072 
+\f0 , 
+\f2 \uc0\u1074 
+\f0  
+\f2 \uc0\u1087 \u1072 \u1087 \u1082 \u1077 
+\f0  drawble 
+\f2 \uc0\u1076 \u1086 \u1083 \u1078 \u1077 \u1085 
+\f0  
+\f2 \uc0\u1083 \u1077 \u1078 \u1072 \u1090 \u1100 
+\f0  
+\f2 \uc0\u1092 \u1072 \u1081 \u1083 
+\f0  
+\f2 \uc0\u1089 
+\f0  
+\f2 \uc0\u1080 \u1079 \u1086 \u1073 \u1088 \u1072 \u1078 \u1077 \u1085 \u1080 \u1077 \u1084 
+\f0  
+\f2 \uc0\u1082 \u1086 \u1090 \u1072 
+\f0  cat.png 
+\f2 \uc0\u1080 \u1083 \u1080 
+\f0  jpeg\
+                    \cf4 im.setImageResource(R.drawable.
+\f1\i \cf5 cat1
+\f0\i0 \cf4 )\cf2 ;\
+                    \cf9 //
+\f2 \uc0\u1042 
+\f0  
+\f2 \uc0\u1082 \u1072 \u1095 \u1077 \u1089 \u1090 \u1074 \u1077 
+\f0  
+\f2 \uc0\u1087 \u1088 \u1077 \u1076 \u1089 \u1090 \u1072 \u1074 \u1083 \u1077 \u1085 \u1080 \u1103 
+\f0  
+\f2 \uc0\u1076 \u1083 \u1103 
+\f0  
+\f2 \uc0\u1085 \u1072 \u1096 \u1077 \u1075 \u1086 
+\f0  
+\f2 \uc0\u1089 \u1086 \u1073 \u1097 \u1077 \u1085 \u1080 \u1103 
+\f0  (toast)\
+                    //
+\f2 \uc0\u1085 \u1072 \u1079 \u1085 \u1072 \u1095 \u1085 \u1072 \u1077 \u1084 
+\f0  im, 
+\f2 \uc0\u1086 \u1073 \u1098 \u1077 \u1082 \u1090 
+\f0  
+\f2 \uc0\u1082 \u1083 \u1072 \u1089 \u1089 \u1072 
+\f0  ImageView, 
+\f2 \uc0\u1074 
+\f0  
+\f2 \uc0\u1082 \u1086 \u1090 \u1086 \u1088 \u1086 \u1084 
+\f0  
+\f2 \uc0\u1079 \u1072 \u1075 \u1088 \u1091 \u1079 \u1080 \u1083 \u1086 \u1089 \u1100 
+\f0 \
+                    //
+\f2 \uc0\u1080 \u1079 
+\f0  
+\f2 \uc0\u1087 \u1072 \u1087 \u1082 \u1080 
+\f0  drawable 
+\f2 \uc0\u1080 \u1079 \u1086 \u1073 \u1088 \u1072 \u1078 \u1077 \u1085 \u1080 \u1077 
+\f0  
+\f2 \uc0\u1082 \u1086 \u1090 \u1072 
+\f0 \
+                    \cf4 toast.setView(im)\cf2 ;\
+                    \cf4 toast.show()\cf2 ;\
+                \cf4 \}\
+                \cf2 break;\
+        \cf4 \}\
+        \cf2 return true;\
+    \cf4 \}\
+\
+    \cf10 @Override\
+    \cf2 protected void \cf7 onCreate\cf4 (Bundle savedInstanceState) \{\
+        \cf9 //
+\f2 \uc0\u1059 \u1073 \u1080 \u1088 \u1072 \u1077 \u1090 
+\f0  
+\f2 \uc0\u1079 \u1072 \u1075 \u1086 \u1083 \u1086 \u1074 \u1086 \u1082 
+\f0  
+\f2 \uc0\u1085 \u1072 \u1079 \u1074 \u1072 \u1085 \u1080 \u1103 
+\f0  
+\f2 \uc0\u1087 \u1088 \u1080 \u1083 \u1086 \u1078 \u1077 \u1085 \u1080 \u1103 
+\f0  
+\f2 \uc0\u1089 
+\f0  
+\f2 \uc0\u1101 \u1082 \u1088 \u1072 \u1085 \u1072 
+\f0 \
+        \cf4 requestWindowFeature(Window.
+\f1\i \cf5 FEATURE_NO_TITLE
+\f0\i0 \cf4 )\cf2 ;\
+        \cf9 //
+\f2 \uc0\u1079 \u1072 \u1087 \u1091 \u1089 \u1082 \u1072 \u1077 \u1090 
+\f0  
+\f2 \uc0\u1072 \u1082 \u1090 \u1080 \u1074 \u1085 \u1086 \u1089 \u1090 \u1100 
+\f0  
+\f2 \uc0\u1085 \u1072 
+\f0  
+\f2 \uc0\u1074 \u1077 \u1089 \u1100 
+\f0  
+\f2 \uc0\u1101 \u1082 \u1088 \u1072 \u1085 
+\f0 \
+        \cf4 getWindow().setFlags(WindowManager.LayoutParams.
+\f1\i \cf5 FLAG_FULLSCREEN
+\f0\i0 \cf2 ,\
+                \cf4 WindowManager.LayoutParams.
+\f1\i \cf5 FLAG_FULLSCREEN
+\f0\i0 \cf4 )\cf2 ;\
+        super\cf4 .onCreate(savedInstanceState)\cf2 ;\
+        \cf4 setContentView(R.layout.
+\f1\i \cf5 activity_main
+\f0\i0 \cf4 )\cf2 ;\
+        \cf5 outputText\cf4 =findViewById(R.id.
+\f1\i \cf5 fieldTouch
+\f0\i0 \cf4 )\cf2 ;\
+        \cf9 //
+\f2 \uc0\u1044 \u1083 \u1103 
+\f0  
+\f2 \uc0\u1090 \u1077 \u1082 \u1089 \u1090 \u1086 \u1074 \u1086 \u1075 \u1086 
+\f0  
+\f2 \uc0\u1087 \u1086 \u1083 \u1103 
+\f0  outputText 
+\f2 \uc0\u1091 \u1089 \u1090 \u1072 \u1074 \u1085 \u1072 \u1074 \u1083 \u1080 \u1074 \u1072 \u1077 \u1090 \u1089 \u1103 
+\f0  
+\f2 \uc0\u1074 
+\f0  
+\f2 \uc0\u1082 \u1072 \u1095 \u1077 \u1089 \u1090 \u1074 \u1077 
+\f0  
+\f2 \uc0\u1086 \u1073 \u1088 \u1072 \u1073 \u1086 \u1090 \u1082 \u1080 
+\f0 \
+        //
+\f2 \uc0\u1089 \u1086 \u1073 \u1099 \u1090 \u1080 \u1103 
+\f0  
+\f2 \uc0\u1082 \u1072 \u1089 \u1072 \u1085 \u1080 \u1103 
+\f0  (onTouch) 
+\f2 \uc0\u1084 \u1077 \u1090 \u1086 \u1076 
+\f0  onTouch, 
+\f2 \uc0\u1082 \u1086 \u1090 \u1086 \u1088 \u1099 \u1081 
+\f0  
+\f2 \uc0\u1085 \u1072 \u1093 \u1086 \u1076 \u1080 \u1090 \u1089 \u1103 
+\f0  
+\f2 \uc0\u1074 
+\f0  
+\f2 \uc0\u1101 \u1090 \u1086 \u1084 
+\f0  
+\f2 \uc0\u1078 \u1077 
+\f0  
+\f2 \uc0\u1082 \u1083 \u1072 \u1089 \u1089 \u1077 
+\f0 \
+        \cf5 outputText\cf4 .setOnTouchListener(\cf2 this\cf4 ::onTouch)\cf2 ;\
+    \cf4 \}\
+\}\
+}
